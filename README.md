@@ -1,4 +1,4 @@
-![stop sign](https://github.com/IcepTo2/Hypixel-Bot/blob/master/images/HypixelBanner.png?raw=true)
+![stop sign](https://github.com/Wonderpants/Hypixel-Bot/blob/master/images/HypixelBanner.png?raw=true)
 
 # Hypixel Bot
 

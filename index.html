@@ -1,60 +1,538 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-  <head>
-      <!-- Site Information and SEO -->
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-      <meta name="description" content="A bot made to give your Discord Server all Hypixel related information.">
-      <meta property="og:site_name" content="Hypixel Bot">
-      <meta property="og:title" content="Hypixel Bot">
-      <link rel="icon" href="images/Hypixel-pfp.png">
-      <title>Hypixel Bot</title>
+	<head>
+		<link rel="icon" href="images/Hypixel-pfp.png">
+		<title>Hypixel Bot</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body>
 
-      <!-- Custom Fonts -->
-      <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-      <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-      <link href="https://fonts.googleapis.com/css?family=PT+Sans|Roboto" rel="stylesheet">
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-      <!-- CSS -->
-      <link href="css/main.min.css" rel="stylesheet" type="text/css">
+				<!-- Header -->
+					<header id="header">
+						<!--
+						<div class="logo">
+							<span class="icon fa-diamond"></span>
+						</div>
+						 -->
+						<div class="content">
+							<div class="inner">
+								<h1>Hypixel Bot</h1>
+								<p>An unofficial Hypixel bot for Discord that shows you statistics and more.</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#commands">Commands</a></li>
+								<li><a href="#about">About</a></li>
+								<li><a href="#support">Support</a></li>
+							</ul>
+						</nav>
+					</header>
 
-      <!-- Scripts -->
-      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-      <script type="text/javascript" src="js/particles.js" async></script>
-      <script type="text/javascript" src="js/smoothScroll.js" async></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/typeit/5.2.0/typeit.min.js"></script>
-      <script type="text/javascript" src="js/typing.js" async></script>
-      <!-- <script type="text/javascript" src="js/menuActions.js" async></script> -->
+				<!-- Main -->
+					<div id="main">
 
-  </head>
-  <body>
-    <div class="site-container">
-      <header class="container">
-        <div class="layer">
-          <h1><em><strong>Add me today and <br>check your stats on the go!</strong></em><br></h1>
-            <p>Hello, I'm here to help you and make your life easier.<br>
-                Now you're probably wondering &quot;What are you useful for?&quot;, so I'll show you some of my features:</p>
-            <h2><p>Some of the many features</p></h2>
-            <li>Check your Hypixel stats! (<samp>h!hypixel <em>Malwared</em></samp>)</li>
-            <li>As well as most games on the Network! (<samp>h!hypixel [game] <em>Malwared</em></samp>)</li>
-            <li>You can even check your friends stats by mentioning them (<samp>if they've verified themselves</samp>)</li><br>
-            <li>Get someone's Minecraft username history! (<samp>h!minecraft names <em>Malwared</em></samp>)</li>
-            <li>View and Download someone's skin! (<samp>h!minecraft skin <em>Malwared</em></samp>)</li>
-            <li>And way, way more to discover!</li><br>
-            <li class="last-p">And with 24/7 uptime, Stop Bot will never sleep on the job.</li><br>
+						<!-- Commands -->
+							<article id="commands">
+								<h2 class="major">Commands</h2>
+								<span class="image main"><img src="images/HypixelBanner.png" ></span>
+								<h4 class="major">Hypixel</h4>
+								<p>There's a main command [<em>h!hypixel</em>] with several subcommands.</p>
 
-            <p>h!hypixel <span id="typing"></span></p>
+								<p><sub>Note: The user <em>&quot;Malwared&quot;</em> is just used as example. You can use any username.</sub></p>
 
-            <div class="links">
-                <a class="button" href="https://discordapp.com/oauth2/authorize?client_id=333422871567400961&scope=bot&permissions=268561472" target="_blank">Invite Me</a>
-                <a class="button" href="https://discord.gg/GRPUTrS" target="_blank">Join Our Server</a>
-            </div>
-        </div>
-          <img class="Hypixel" src="images/Hypixel.gif"/>
-      </header>
-    </div>
-  </body>
+								<div class="table-wrapper">
+									<table>
+										<thead>
+											<tr>
+												<th>Command</th>
+												<th>Description</th>
+												<th>Example</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>hypixel</td>
+												<td>Retrieves basic information about a player.</td>
+												<td>h!hypixel <em>&quot;Malwared&quot;</em></td>
+											</tr>
+											<tr>
+												<td>bedwars</td>
+												<td>Complete information about bedwars player</td>
+												<td>h!h bw <em>&quot;Malwared&quot;</em></td>
+											</tr>
+											<tr>
+												<td>murdermystery</td>
+												<td></td>
+												<td>h!h mm <em>&quot;Malwared&quot;</em></td>
+											</tr>
+											<tr>
+												<td>arcade</td>
+												<td></td>
+												<td>h!h arcade <em>&quot;Malwared&quot;</em></td>
+											</tr>
+											<tr>
+												<td>blitz</td>
+												<td></td>
+												<td>h!h bsg <em>&quot;Malwared&quot;</em></td>
+											</tr>
+											<tr>
+												<td>copsncrimes</td>
+												<td></td>
+												<td>h!h cc <em>&quot;Malwared&quot;</em></td>
+											</tr>
+											<tr>
+												<td>murdermystery</td>
+												<td></td>
+												<td>h!h mm <em>&quot;Malwared&quot;</em></td>
+											</tr>
+											<tr>
+												<td>crazywalls</td>
+												<td></td>
+												<td>h!h cw <em>&quot;Malwared&quot;</em></td>
+											</tr>
+											<tr>
+												<td>megawalls</td>
+												<td></td>
+												<td>h!h mw <em>&quot;Malwared&quot;</em></td>
+											</tr>
+											<tr>
+												<td>skyclash</td>
+												<td></td>
+												<td>h!h sc <em>&quot;Malwared&quot;</em></td>
+											</tr>
+											<tr>
+												<td>skywars</td>
+												<td></td>
+												<td>h!h sw <em>&quot;Malwared&quot;</em></td>
+											</tr>
+											<tr>
+												<td>smashheroes</td>
+												<td></td>
+												<td>h!h sh <em>&quot;Malwared&quot;</em></td>
+											</tr>
+											<tr>
+												<td>speeduhc</td>
+												<td></td>
+												<td>h!h suhc <em>&quot;Malwared&quot;</em></td>
+											</tr>
+											<tr>
+												<td>uhc</td>
+												<td></td>
+												<td>h!h uhc <em>&quot;Malwared&quot;</em></td>
+											</tr>
+											<tr>
+												<td>duels</td>
+												<td></td>
+												<td>h!h duels <em>&quot;Malwared&quot;</em></td>
+											</tr>
+											<tr>
+												<td>verify</td>
+												<td>Verifies your minecraft account.</td>
+												<td>h!h verify <em>&quot;Malwared&quot;</em></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<h4 class="major">Mojang</h4>
+								<div class="table-wrapper">
+									<table>
+										<thead>
+											<tr>
+												<th>Command</th>
+												<th>Description</th>
+												<th>Example</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>minecraft</td>
+												<td>Just a main command to keep things organized.</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>names</td>
+												<td>Gives you someone's past usernames</td>
+												<td>h!mc names <em>&quot;Malwared&quot;</em></td>
+											</tr>
+											<tr>
+												<td>skin</td>
+												<td>Displays someone's skin</td>
+												<td>h!mc skin <em>&quot;Malwared&quot;</em></td>
+											</tr>
+											<tr>
+												<td>uuid</td>
+												<td>Sends someone's uuid.</td>
+												<td>h!mc uuid <em>&quot;Malwared&quot;</em></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<h4 class="major">Misc</h4>
+								<div class="table-wrapper">
+									<table>
+										<thead>
+											<tr>
+												<th>Command</th>
+												<th>Description</th>
+												<th>Example</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>about</td>
+												<td>Basic information about the bot.</td>
+												<td>h!about</td>
+											</tr>
+											<tr>
+												<td>request</td>
+												<td>Request something to be fixed/added</td>
+												<td>h!request <em>&quot;add a smash heroes command&quot;</em></td>
+											</tr>
+											<tr>
+												<td>invite</td>
+												<td>Invite the bot to your server.</td>
+												<td>h!invite</td>
+											</tr>
+											<tr>
+												<td>support</td>
+												<td>Join the support server.</td>
+												<td>h!support</td>
+											</tr>
+											<tr>
+												<td>upvote</td>
+												<td>Upvote the bot on the website</td>
+												<td>h!upvote</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+
+							</article>
+
+						<!-- Work
+							<article id="work">
+								<h2 class="major">Work</h2>
+								<span class="image main"><img src="images/pic02.jpg" ></span>
+								<p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
+								<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
+							</article>
+						-->
+
+						<!-- About -->
+							<article id="about">
+								<h2 class="major">About</h2>
+								<span class="image main"><img src="images/HypixelBanner.png"></span>
+								<div align="left">
+									<a href="https://github.com/Rapptz/discord.py">
+										<img src="https://img.shields.io/badge/discord-py-blue.svg" width="70px">
+									</a>
+									<a href="https://discordbots.org/bot/333422871567400961" style="margin-left: 5px;">
+										<img src="https://discordbots.org/api/widget/status/333422871567400961.svg" width="120px">
+									</a>
+									<a href="https://discordbots.org/bot/333422871567400961" style="margin-left: 5px;">
+										<img src="https://discordbots.org/api/widget/servers/333422871567400961.svg" width="120px">
+									</a>
+									<a href="https://discord.gg/GRPUTrS" style="margin-left: 5px;">
+										<img src="https://img.shields.io/discord/385954529557872640.svg" width="90px">
+									</a>
+								</div>
+								<p>Hello, as you may have noticed already this is a Discord Bot that retrieves all kind of information related to Hypixel.
+								This bot began to be developed around August 2017, mainly for a private community which played mostly bedwars
+									and was also inspired on the <a href="https://sprinkly.net/hypixelbot">Hypixel Bot</a> from <a href="https://hypixel.net/members/snuggle.826637/">Snuggle</a>.<br>
+								The bot was never 100% private and when people started adding it to their servers I gained more interest on the project and been working in it everyday since then.<br><br>
+								By the time I'm writing this, the bot was in 298 servers with a total of 46776 users and an average of 231 commands used per day.</p>
+							</article>
+
+						<!-- Support -->
+							<article id="support">
+								<h2 class="major">Support</h2>
+								<span class="image main"><img src="images/HypixelBanner.png"/></span>
+								<p>There are many ways you can use to reach me and ask for support,
+									however the main ones are the <a href="https://discord.gg/GRPUTrS">Discord Server</a> and the Bot itself.
+									But you can clearly use the other methods such as pm'ing me on the <a href="https://hypixel.net/conversations/add?to=Wonderpants">Hypixel Forums</a>,
+									replying on the <a href="https://hypixel.net/threads/hypixel-related-discord-bot.1520204/">Bot Thread</a>
+									or adding me on Discord under the name "Ice#1301".
+								</p>
+								<ul class="icons">
+									<li><a href="https://discord.gg/GRPUTrS" class="icon fa-discord"><span class="label">Discord</span></a></li>
+									<li><a href="https://github.com/Wonderpants/Hypixel-Bot" class="icon fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</article>
+
+						<!-- Elements
+							<article id="elements">
+								<h2 class="major">Elements</h2>
+
+								<section>
+									<h3 class="major">Text</h3>
+									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
+									<hr />
+									<h2>Heading Level 2</h2>
+									<h3>Heading Level 3</h3>
+									<h4>Heading Level 4</h4>
+									<h5>Heading Level 5</h5>
+									<h6>Heading Level 6</h6>
+									<hr />
+									<h4>Blockquote</h4>
+									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
+									<h4>Preformatted</h4>
+									<pre><code>i = 0;
+
+while (!deck.isInOrder()) {
+    print 'Iteration ' + i;
+    deck.shuffle();
+    i++;
+}
+
+print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+								</section>
+
+
+								<section>
+									<h3 class="major">Lists</h3>
+
+									<h4>Unordered</h4>
+									<ul>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Sagittis adipiscing.</li>
+										<li>Felis enim feugiat.</li>
+									</ul>
+
+									<h4>Alternate</h4>
+									<ul class="alt">
+										<li>Dolor pulvinar etiam.</li>
+										<li>Sagittis adipiscing.</li>
+										<li>Felis enim feugiat.</li>
+									</ul>
+
+									<h4>Ordered</h4>
+									<ol>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Etiam vel felis viverra.</li>
+										<li>Felis enim feugiat.</li>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Etiam vel felis lorem.</li>
+										<li>Felis enim et feugiat.</li>
+									</ol>
+									<h4>Icons</h4>
+									<ul class="icons">
+										<li><a href="#" class="icon fa-discord"><span class="label">Discord</span></a></li>
+										<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+									</ul>
+
+									<h4>Actions</h4>
+									<ul class="actions">
+										<li><a href="#" class="button special">Default</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+									<ul class="actions vertical">
+										<li><a href="#" class="button special">Default</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+								</section>
+
+								<section>
+									<h3 class="major">Table</h3>
+									<h4>Default</h4>
+									<div class="table-wrapper">
+										<table>
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Item One</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Two</td>
+													<td>Vis ac commodo adipiscing arcu aliquet.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Three</td>
+													<td> Morbi faucibus arcu accumsan lorem.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Four</td>
+													<td>Vitae integer tempus condimentum.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Five</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>100.00</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+
+									<h4>Alternate</h4>
+									<div class="table-wrapper">
+										<table class="alt">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Item One</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Two</td>
+													<td>Vis ac commodo adipiscing arcu aliquet.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Three</td>
+													<td> Morbi faucibus arcu accumsan lorem.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Four</td>
+													<td>Vitae integer tempus condimentum.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Five</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>100.00</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</section>
+
+								<section>
+									<h3 class="major">Buttons</h3>
+									<ul class="actions">
+										<li><a href="#" class="button special">Special</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+									<ul class="actions">
+										<li><a href="#" class="button">Default</a></li>
+										<li><a href="#" class="button small">Small</a></li>
+									</ul>
+									<ul class="actions">
+										<li><a href="#" class="button special icon fa-download">Icon</a></li>
+										<li><a href="#" class="button icon fa-download">Icon</a></li>
+									</ul>
+									<ul class="actions">
+										<li><span class="button special disabled">Disabled</span></li>
+										<li><span class="button disabled">Disabled</span></li>
+									</ul>
+								</section>
+
+								<section>
+									<h3 class="major">Form</h3>
+									<form method="post" action="#">
+										<div class="field half first">
+											<label for="demo-name">Name</label>
+											<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
+										</div>
+										<div class="field half">
+											<label for="demo-email">Email</label>
+											<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
+										</div>
+										<div class="field">
+											<label for="demo-category">Category</label>
+											<div class="select-wrapper">
+												<select name="demo-category" id="demo-category">
+													<option value="">-</option>
+													<option value="1">Manufacturing</option>
+													<option value="1">Shipping</option>
+													<option value="1">Administration</option>
+													<option value="1">Human Resources</option>
+												</select>
+											</div>
+										</div>
+										<div class="field half first">
+											<input type="radio" id="demo-priority-low" name="demo-priority" checked>
+											<label for="demo-priority-low">Low</label>
+										</div>
+										<div class="field half">
+											<input type="radio" id="demo-priority-high" name="demo-priority">
+											<label for="demo-priority-high">High</label>
+										</div>
+										<div class="field half first">
+											<input type="checkbox" id="demo-copy" name="demo-copy">
+											<label for="demo-copy">Email me a copy</label>
+										</div>
+										<div class="field half">
+											<input type="checkbox" id="demo-human" name="demo-human" checked>
+											<label for="demo-human">Not a robot</label>
+										</div>
+										<div class="field">
+											<label for="demo-message">Message</label>
+											<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+										</div>
+										<ul class="actions">
+											<li><input type="submit" value="Send Message" class="special" /></li>
+											<li><input type="reset" value="Reset" /></li>
+										</ul>
+									</form>
+								</section>
+
+							</article>
+						-->
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>

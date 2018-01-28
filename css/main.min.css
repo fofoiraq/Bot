@@ -187,10 +187,11 @@ a.button:hover{
 }
 
 .Hypixel{
+    width: 600px;
+    height: auto;
     position:absolute;
-    bottom:0;
+    top:30px;
     right:0px;
-    height:100vh;
     z-index:1
 }
 
